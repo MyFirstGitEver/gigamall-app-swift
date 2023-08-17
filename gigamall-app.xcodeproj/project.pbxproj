@@ -14,6 +14,12 @@
 		8242CBC02A8CA1D6007B2731 /* TwoHeadSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBBF2A8CA1D6007B2731 /* TwoHeadSliderView.swift */; };
 		8242CBCD2A8CD087007B2731 /* AllCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */; };
 		8242CBCF2A8CD316007B2731 /* ByCategoryInListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */; };
+		8242CBD22A8DBFC3007B2731 /* UserAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD12A8DBFC3007B2731 /* UserAPICaller.swift */; };
+		8242CBD42A8DC0AC007B2731 /* LoginAndPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD32A8DC0AC007B2731 /* LoginAndPort.swift */; };
+		8242CBD62A8DC542007B2731 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD52A8DC542007B2731 /* APICaller.swift */; };
+		8242CBD92A8DC72E007B2731 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD82A8DC72E007B2731 /* UserEntity.swift */; };
+		8242CBDC2A8DE6CD007B2731 /* ProductAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBDB2A8DE6CD007B2731 /* ProductAPICaller.swift */; };
+		8242CBDE2A8DE725007B2731 /* ProductEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBDD2A8DE725007B2731 /* ProductEntity.swift */; };
 		827851052A8B47F600696846 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827851042A8B47F600696846 /* RegisterView.swift */; };
 		8289C9A52A8B507200355827 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A42A8B507200355827 /* ConfirmationView.swift */; };
 		8289C9A72A8B6D3600355827 /* ProductMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A62A8B6D3600355827 /* ProductMainView.swift */; };
@@ -60,6 +66,12 @@
 		8242CBBF2A8CA1D6007B2731 /* TwoHeadSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoHeadSliderView.swift; sourceTree = "<group>"; };
 		8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesView.swift; sourceTree = "<group>"; };
 		8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCategoryInListAllView.swift; sourceTree = "<group>"; };
+		8242CBD12A8DBFC3007B2731 /* UserAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPICaller.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		8242CBD32A8DC0AC007B2731 /* LoginAndPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndPort.swift; sourceTree = "<group>"; };
+		8242CBD52A8DC542007B2731 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		8242CBD82A8DC72E007B2731 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		8242CBDB2A8DE6CD007B2731 /* ProductAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPICaller.swift; sourceTree = "<group>"; };
+		8242CBDD2A8DE725007B2731 /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
 		827851042A8B47F600696846 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		8289C9A42A8B507200355827 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
 		8289C9A62A8B6D3600355827 /* ProductMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainView.swift; sourceTree = "<group>"; };
@@ -118,6 +130,35 @@
 			path = helpers;
 			sourceTree = "<group>";
 		};
+		8242CBD02A8DBF9A007B2731 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				8242CBDA2A8DE6BB007B2731 /* product-api */,
+				8242CBD72A8DC6A0007B2731 /* user-api */,
+				8242CBD32A8DC0AC007B2731 /* LoginAndPort.swift */,
+				8242CBD52A8DC542007B2731 /* APICaller.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		8242CBD72A8DC6A0007B2731 /* user-api */ = {
+			isa = PBXGroup;
+			children = (
+				8242CBD82A8DC72E007B2731 /* UserEntity.swift */,
+				8242CBD12A8DBFC3007B2731 /* UserAPICaller.swift */,
+			);
+			path = "user-api";
+			sourceTree = "<group>";
+		};
+		8242CBDA2A8DE6BB007B2731 /* product-api */ = {
+			isa = PBXGroup;
+			children = (
+				8242CBDB2A8DE6CD007B2731 /* ProductAPICaller.swift */,
+				8242CBDD2A8DE725007B2731 /* ProductEntity.swift */,
+			);
+			path = "product-api";
+			sourceTree = "<group>";
+		};
 		82F8F53F2A8A0F1600F405B5 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +182,7 @@
 		82F8F54A2A8A0F1600F405B5 /* gigamall-app */ = {
 			isa = PBXGroup;
 			children = (
+				8242CBD02A8DBF9A007B2731 /* api */,
 				8222D4692A8BA31C00319F21 /* helpers */,
 				82F8F5872A8A77FA00F405B5 /* main-screens */,
 				82F8F5782A8A196900F405B5 /* defined-views */,
@@ -346,11 +388,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8242CBD22A8DBFC3007B2731 /* UserAPICaller.swift in Sources */,
 				8289C9A52A8B507200355827 /* ConfirmationView.swift in Sources */,
 				8222D46C2A8BA31C00319F21 /* DataConverter.swift in Sources */,
 				8289C9A92A8B741500355827 /* CommentView.swift in Sources */,
 				8242CBC02A8CA1D6007B2731 /* TwoHeadSliderView.swift in Sources */,
 				82F8F5802A8A20AA00F405B5 /* ClothesView.swift in Sources */,
+				8242CBD42A8DC0AC007B2731 /* LoginAndPort.swift in Sources */,
+				8242CBD62A8DC542007B2731 /* APICaller.swift in Sources */,
 				8289C9AB2A8B742E00355827 /* Comment.swift in Sources */,
 				827851052A8B47F600696846 /* RegisterView.swift in Sources */,
 				8242CBCF2A8CD316007B2731 /* ByCategoryInListAllView.swift in Sources */,
@@ -361,12 +406,15 @@
 				8222D4712A8BB5D500319F21 /* ProductInListAllView.swift in Sources */,
 				82F8F5892A8A780D00F405B5 /* LoginView.swift in Sources */,
 				82F8F54C2A8A0F1600F405B5 /* gigamall_appApp.swift in Sources */,
+				8242CBDE2A8DE725007B2731 /* ProductEntity.swift in Sources */,
 				82F8F57E2A8A1C0000F405B5 /* HottestProductView.swift in Sources */,
 				8222D46F2A8BB3A900319F21 /* CategoryMainView.swift in Sources */,
 				8242CBCD2A8CD087007B2731 /* AllCategoriesView.swift in Sources */,
 				82F8F5772A8A190E00F405B5 /* Product.swift in Sources */,
 				82F8F5862A8A71DC00F405B5 /* RecommendedProductView.swift in Sources */,
+				8242CBD92A8DC72E007B2731 /* UserEntity.swift in Sources */,
 				82F8F5822A8A67AB00F405B5 /* ByCategoryInMainView.swift in Sources */,
+				8242CBDC2A8DE6CD007B2731 /* ProductAPICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

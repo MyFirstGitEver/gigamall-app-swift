@@ -9,15 +9,15 @@ import SwiftUI
 
 @main
 struct gigamall_appApp: App {
-    @State private var showsMain : Bool = false
+    @State private var user : UserEntity? = nil
     
     var body: some Scene {
         WindowGroup {
             ZStack {
-                LoginView(showsMain: $showsMain)
-                    .offset(x: showsMain ? -1000 : 0)
-                MainView()
-                    .offset(x: showsMain ? 0 : -1000)
+                LoginView(user: $user)
+                    .offset(x: user != nil ? -1000 : 0)
+                MainView(myUser: user ?? UserEntity())
+                    .offset(x: user != nil ? 0 : -1000)
             }
         }
     }

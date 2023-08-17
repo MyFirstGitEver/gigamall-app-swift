@@ -12,7 +12,15 @@ struct HottestProductView: View {
     
     var body: some View {
         VStack{
-            Image("ad1")
+            AsyncImage(url: URL(string: product.imageLink)) { image in
+                       image
+                           .resizable()
+                           .scaledToFit()
+                           
+                   } placeholder: {
+                       Color.gray
+                   }
+            
             Text("\(product.name) (\(product.price)$)")
                 .bold()
                 .font(.system(size: 20))
@@ -21,9 +29,9 @@ struct HottestProductView: View {
             Text(product.description)
                 .foregroundColor(.gray)
             
-            Button(action: {
-                
-            }) {
+            NavigationLink {
+                ProductMainView(product: product)
+            } label: {
                 Text("Xem thêm >")
                     .padding([.top], 10)
                     .font(.system(size: 20))
