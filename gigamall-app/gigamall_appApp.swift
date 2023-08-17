@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct gigamall_appApp: App {
+    @State private var showsMain : Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                LoginView(showsMain: $showsMain)
+                    .offset(x: showsMain ? -1000 : 0)
+                MainView()
+                    .offset(x: showsMain ? 0 : -1000)
+            }
         }
     }
 }

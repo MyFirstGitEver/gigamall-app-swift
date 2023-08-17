@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8222D46C2A8BA31C00319F21 /* DataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222D46A2A8BA31C00319F21 /* DataConverter.swift */; };
+		8222D46D2A8BA31C00319F21 /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222D46B2A8BA31C00319F21 /* MyDateFormatter.swift */; };
+		8222D46F2A8BB3A900319F21 /* CategoryMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222D46E2A8BB3A900319F21 /* CategoryMainView.swift */; };
+		8222D4712A8BB5D500319F21 /* ProductInListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8222D4702A8BB5D500319F21 /* ProductInListAllView.swift */; };
+		8242CBC02A8CA1D6007B2731 /* TwoHeadSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBBF2A8CA1D6007B2731 /* TwoHeadSliderView.swift */; };
+		8242CBCD2A8CD087007B2731 /* AllCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */; };
+		8242CBCF2A8CD316007B2731 /* ByCategoryInListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */; };
+		827851052A8B47F600696846 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827851042A8B47F600696846 /* RegisterView.swift */; };
+		8289C9A52A8B507200355827 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A42A8B507200355827 /* ConfirmationView.swift */; };
+		8289C9A72A8B6D3600355827 /* ProductMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A62A8B6D3600355827 /* ProductMainView.swift */; };
+		8289C9A92A8B741500355827 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A82A8B741500355827 /* CommentView.swift */; };
+		8289C9AB2A8B742E00355827 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9AA2A8B742E00355827 /* Comment.swift */; };
 		82F8F54C2A8A0F1600F405B5 /* gigamall_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F54B2A8A0F1600F405B5 /* gigamall_appApp.swift */; };
-		82F8F54E2A8A0F1600F405B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F54D2A8A0F1600F405B5 /* ContentView.swift */; };
+		82F8F54E2A8A0F1600F405B5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F54D2A8A0F1600F405B5 /* MainView.swift */; };
 		82F8F5502A8A0F1800F405B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F8F54F2A8A0F1800F405B5 /* Assets.xcassets */; };
 		82F8F5532A8A0F1800F405B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F8F5522A8A0F1800F405B5 /* Preview Assets.xcassets */; };
 		82F8F55D2A8A0F1900F405B5 /* gigamall_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F55C2A8A0F1900F405B5 /* gigamall_appTests.swift */; };
 		82F8F5672A8A0F1900F405B5 /* gigamall_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5662A8A0F1900F405B5 /* gigamall_appUITests.swift */; };
 		82F8F5692A8A0F1900F405B5 /* gigamall_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5682A8A0F1900F405B5 /* gigamall_appUITestsLaunchTests.swift */; };
+		82F8F5772A8A190E00F405B5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5762A8A190E00F405B5 /* Product.swift */; };
+		82F8F57E2A8A1C0000F405B5 /* HottestProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F57D2A8A1C0000F405B5 /* HottestProductView.swift */; };
+		82F8F5802A8A20AA00F405B5 /* ClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F57F2A8A20AA00F405B5 /* ClothesView.swift */; };
+		82F8F5822A8A67AB00F405B5 /* ByCategoryInMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5812A8A67AB00F405B5 /* ByCategoryInMainView.swift */; };
+		82F8F5842A8A67C000F405B5 /* ByCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5832A8A67C000F405B5 /* ByCategory.swift */; };
+		82F8F5862A8A71DC00F405B5 /* RecommendedProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5852A8A71DC00F405B5 /* RecommendedProductView.swift */; };
+		82F8F5892A8A780D00F405B5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F5882A8A780D00F405B5 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +53,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8222D46A2A8BA31C00319F21 /* DataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataConverter.swift; sourceTree = "<group>"; };
+		8222D46B2A8BA31C00319F21 /* MyDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
+		8222D46E2A8BB3A900319F21 /* CategoryMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMainView.swift; sourceTree = "<group>"; };
+		8222D4702A8BB5D500319F21 /* ProductInListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInListAllView.swift; sourceTree = "<group>"; };
+		8242CBBF2A8CA1D6007B2731 /* TwoHeadSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoHeadSliderView.swift; sourceTree = "<group>"; };
+		8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesView.swift; sourceTree = "<group>"; };
+		8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCategoryInListAllView.swift; sourceTree = "<group>"; };
+		827851042A8B47F600696846 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		8289C9A42A8B507200355827 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		8289C9A62A8B6D3600355827 /* ProductMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainView.swift; sourceTree = "<group>"; };
+		8289C9A82A8B741500355827 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		8289C9AA2A8B742E00355827 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		82F8F5482A8A0F1600F405B5 /* gigamall-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gigamall-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F8F54B2A8A0F1600F405B5 /* gigamall_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gigamall_appApp.swift; sourceTree = "<group>"; };
-		82F8F54D2A8A0F1600F405B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82F8F54D2A8A0F1600F405B5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		82F8F54F2A8A0F1800F405B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82F8F5522A8A0F1800F405B5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82F8F5582A8A0F1900F405B5 /* gigamall-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gigamall-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +75,13 @@
 		82F8F5622A8A0F1900F405B5 /* gigamall-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gigamall-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F8F5662A8A0F1900F405B5 /* gigamall_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gigamall_appUITests.swift; sourceTree = "<group>"; };
 		82F8F5682A8A0F1900F405B5 /* gigamall_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gigamall_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82F8F5762A8A190E00F405B5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		82F8F57D2A8A1C0000F405B5 /* HottestProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HottestProductView.swift; sourceTree = "<group>"; };
+		82F8F57F2A8A20AA00F405B5 /* ClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesView.swift; sourceTree = "<group>"; };
+		82F8F5812A8A67AB00F405B5 /* ByCategoryInMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCategoryInMainView.swift; sourceTree = "<group>"; };
+		82F8F5832A8A67C000F405B5 /* ByCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCategory.swift; sourceTree = "<group>"; };
+		82F8F5852A8A71DC00F405B5 /* RecommendedProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedProductView.swift; sourceTree = "<group>"; };
+		82F8F5882A8A780D00F405B5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8222D4692A8BA31C00319F21 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8222D46A2A8BA31C00319F21 /* DataConverter.swift */,
+				8222D46B2A8BA31C00319F21 /* MyDateFormatter.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		82F8F53F2A8A0F1600F405B5 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +141,11 @@
 		82F8F54A2A8A0F1600F405B5 /* gigamall-app */ = {
 			isa = PBXGroup;
 			children = (
+				8222D4692A8BA31C00319F21 /* helpers */,
+				82F8F5872A8A77FA00F405B5 /* main-screens */,
+				82F8F5782A8A196900F405B5 /* defined-views */,
+				82F8F5752A8A190000F405B5 /* user-defined-objects */,
 				82F8F54B2A8A0F1600F405B5 /* gigamall_appApp.swift */,
-				82F8F54D2A8A0F1600F405B5 /* ContentView.swift */,
 				82F8F54F2A8A0F1800F405B5 /* Assets.xcassets */,
 				82F8F5512A8A0F1800F405B5 /* Preview Content */,
 			);
@@ -125,6 +175,45 @@
 				82F8F5682A8A0F1900F405B5 /* gigamall_appUITestsLaunchTests.swift */,
 			);
 			path = "gigamall-appUITests";
+			sourceTree = "<group>";
+		};
+		82F8F5752A8A190000F405B5 /* user-defined-objects */ = {
+			isa = PBXGroup;
+			children = (
+				82F8F5762A8A190E00F405B5 /* Product.swift */,
+				82F8F5832A8A67C000F405B5 /* ByCategory.swift */,
+				8289C9AA2A8B742E00355827 /* Comment.swift */,
+			);
+			path = "user-defined-objects";
+			sourceTree = "<group>";
+		};
+		82F8F5782A8A196900F405B5 /* defined-views */ = {
+			isa = PBXGroup;
+			children = (
+				82F8F57D2A8A1C0000F405B5 /* HottestProductView.swift */,
+				82F8F57F2A8A20AA00F405B5 /* ClothesView.swift */,
+				82F8F5812A8A67AB00F405B5 /* ByCategoryInMainView.swift */,
+				82F8F5852A8A71DC00F405B5 /* RecommendedProductView.swift */,
+				8289C9A82A8B741500355827 /* CommentView.swift */,
+				8222D4702A8BB5D500319F21 /* ProductInListAllView.swift */,
+				8242CBBF2A8CA1D6007B2731 /* TwoHeadSliderView.swift */,
+				8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */,
+			);
+			path = "defined-views";
+			sourceTree = "<group>";
+		};
+		82F8F5872A8A77FA00F405B5 /* main-screens */ = {
+			isa = PBXGroup;
+			children = (
+				82F8F54D2A8A0F1600F405B5 /* MainView.swift */,
+				82F8F5882A8A780D00F405B5 /* LoginView.swift */,
+				827851042A8B47F600696846 /* RegisterView.swift */,
+				8289C9A42A8B507200355827 /* ConfirmationView.swift */,
+				8289C9A62A8B6D3600355827 /* ProductMainView.swift */,
+				8222D46E2A8BB3A900319F21 /* CategoryMainView.swift */,
+				8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */,
+			);
+			path = "main-screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +346,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F8F54E2A8A0F1600F405B5 /* ContentView.swift in Sources */,
+				8289C9A52A8B507200355827 /* ConfirmationView.swift in Sources */,
+				8222D46C2A8BA31C00319F21 /* DataConverter.swift in Sources */,
+				8289C9A92A8B741500355827 /* CommentView.swift in Sources */,
+				8242CBC02A8CA1D6007B2731 /* TwoHeadSliderView.swift in Sources */,
+				82F8F5802A8A20AA00F405B5 /* ClothesView.swift in Sources */,
+				8289C9AB2A8B742E00355827 /* Comment.swift in Sources */,
+				827851052A8B47F600696846 /* RegisterView.swift in Sources */,
+				8242CBCF2A8CD316007B2731 /* ByCategoryInListAllView.swift in Sources */,
+				82F8F54E2A8A0F1600F405B5 /* MainView.swift in Sources */,
+				82F8F5842A8A67C000F405B5 /* ByCategory.swift in Sources */,
+				8222D46D2A8BA31C00319F21 /* MyDateFormatter.swift in Sources */,
+				8289C9A72A8B6D3600355827 /* ProductMainView.swift in Sources */,
+				8222D4712A8BB5D500319F21 /* ProductInListAllView.swift in Sources */,
+				82F8F5892A8A780D00F405B5 /* LoginView.swift in Sources */,
 				82F8F54C2A8A0F1600F405B5 /* gigamall_appApp.swift in Sources */,
+				82F8F57E2A8A1C0000F405B5 /* HottestProductView.swift in Sources */,
+				8222D46F2A8BB3A900319F21 /* CategoryMainView.swift in Sources */,
+				8242CBCD2A8CD087007B2731 /* AllCategoriesView.swift in Sources */,
+				82F8F5772A8A190E00F405B5 /* Product.swift in Sources */,
+				82F8F5862A8A71DC00F405B5 /* RecommendedProductView.swift in Sources */,
+				82F8F5822A8A67AB00F405B5 /* ByCategoryInMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
