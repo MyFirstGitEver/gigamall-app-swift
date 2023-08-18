@@ -15,7 +15,7 @@
 		8242CBCD2A8CD087007B2731 /* AllCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */; };
 		8242CBCF2A8CD316007B2731 /* ByCategoryInListAllView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */; };
 		8242CBD22A8DBFC3007B2731 /* UserAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD12A8DBFC3007B2731 /* UserAPICaller.swift */; };
-		8242CBD42A8DC0AC007B2731 /* LoginAndPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD32A8DC0AC007B2731 /* LoginAndPort.swift */; };
+		8242CBD42A8DC0AC007B2731 /* DomainAndPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD32A8DC0AC007B2731 /* DomainAndPort.swift */; };
 		8242CBD62A8DC542007B2731 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD52A8DC542007B2731 /* APICaller.swift */; };
 		8242CBD92A8DC72E007B2731 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBD82A8DC72E007B2731 /* UserEntity.swift */; };
 		8242CBDC2A8DE6CD007B2731 /* ProductAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242CBDB2A8DE6CD007B2731 /* ProductAPICaller.swift */; };
@@ -67,7 +67,7 @@
 		8242CBCC2A8CD087007B2731 /* AllCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesView.swift; sourceTree = "<group>"; };
 		8242CBCE2A8CD316007B2731 /* ByCategoryInListAllView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCategoryInListAllView.swift; sourceTree = "<group>"; };
 		8242CBD12A8DBFC3007B2731 /* UserAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPICaller.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		8242CBD32A8DC0AC007B2731 /* LoginAndPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndPort.swift; sourceTree = "<group>"; };
+		8242CBD32A8DC0AC007B2731 /* DomainAndPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAndPort.swift; sourceTree = "<group>"; };
 		8242CBD52A8DC542007B2731 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		8242CBD82A8DC72E007B2731 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		8242CBDB2A8DE6CD007B2731 /* ProductAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPICaller.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			children = (
 				8242CBDA2A8DE6BB007B2731 /* product-api */,
 				8242CBD72A8DC6A0007B2731 /* user-api */,
-				8242CBD32A8DC0AC007B2731 /* LoginAndPort.swift */,
+				8242CBD32A8DC0AC007B2731 /* DomainAndPort.swift */,
 				8242CBD52A8DC542007B2731 /* APICaller.swift */,
 			);
 			path = api;
@@ -394,7 +394,7 @@
 				8289C9A92A8B741500355827 /* CommentView.swift in Sources */,
 				8242CBC02A8CA1D6007B2731 /* TwoHeadSliderView.swift in Sources */,
 				82F8F5802A8A20AA00F405B5 /* ClothesView.swift in Sources */,
-				8242CBD42A8DC0AC007B2731 /* LoginAndPort.swift in Sources */,
+				8242CBD42A8DC0AC007B2731 /* DomainAndPort.swift in Sources */,
 				8242CBD62A8DC542007B2731 /* APICaller.swift in Sources */,
 				8289C9AB2A8B742E00355827 /* Comment.swift in Sources */,
 				827851052A8B47F600696846 /* RegisterView.swift in Sources */,

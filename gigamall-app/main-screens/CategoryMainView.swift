@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 enum By : String {
     case mostPopular = "Theo đánh giá"
     case price = "Theo giá"
@@ -21,8 +22,7 @@ struct CategoryMainView: View {
     let allChoices : [By] = [.alphabet, .mostPopular, .price]
     let categoryName : String
     
-    @State private var lowest = CGFLOAT_MAX
-    @State private var range : CGFloat = 0.0
+    @State private var range : CGFloat = 300
     
     @State private var fromRatio : CGFloat = 0.0
     @State private var toRatio : CGFloat = 1.0
@@ -31,11 +31,12 @@ struct CategoryMainView: View {
     @State private var showsRange = false
     
     @State private var sortByStrategy : By = .alphabet
-    @State private var topProducts : [Product] = [
+    @State private var productsOfCategory : [Product] = [
     ]
     
-    @State private var filtered : [Product] = [
-    ]
+    @State private var isLoadingImages : Bool = false
+    @State private var containsMore : Bool = true
+    @State private var pageCount : Int = 0
     
     @Environment(\.dismiss) var dismiss
     
@@ -45,17 +46,14 @@ struct CategoryMainView: View {
                 ScrollView {
                     VStack {
                         topDisplay
-                        
-                        LazyVGrid(columns: twoColumnGridDefinition) {
-                            ForEach(filtered) { topProduct in
-                                ProductInListAllView(product: topProduct)
-                            }
-                        }
+                        productGrid
                         
                         Spacer()
                     }
-                    .task {
-                        loadProducts()
+                }
+                .task {
+                    if productsOfCategory.count == 0 {
+                        loadProducts(refresh: true)
                     }
                 }
                 
@@ -63,7 +61,29 @@ struct CategoryMainView: View {
                     .padding(30)
                     .offset(x: showsFilterDialog ? 0 : -1000)
             }
-        }.navigationBarBackButtonHidden()
+        }
+        .navigationBarBackButtonHidden()
+    }
+    
+    var productGrid : some View {
+        LazyVGrid(columns: twoColumnGridDefinition) {
+            ForEach(productsOfCategory) { product in
+                ProductInListAllView(product: product)
+                    .onAppear {
+                        if product.id == productsOfCategory.last?.id && containsMore {
+                            isLoadingImages = true
+                        }
+                    }
+            }
+            
+            ProgressView().opacity(isLoadingImages ? 1 : 0)
+        }.onChange(of: isLoadingImages) { _ in
+            if containsMore {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    loadProducts(refresh: false)
+                }
+            }
+        }
     }
     
     var filterDialog : some View {
@@ -74,10 +94,12 @@ struct CategoryMainView: View {
                 secondValue: $toRatio,
                 onChangingValue: {
                     withAnimation(.spring()) {
-                        filterBetween()
                         showsRange = true
                     }
-                }, valueConverter: { $0 * range + lowest })
+                },
+                onEndDragging: {
+                    loadProducts(refresh: true)
+                }, valueConverter: { $0 * range })
             
             Button(action: {
                 withAnimation(.spring()) {
@@ -163,42 +185,55 @@ struct CategoryMainView: View {
     }
     
     func getRange() -> String {
-        return lowest == CGFLOAT_MAX ? "": "\(Int(fromRatio * range + lowest))$ - \(Int(toRatio * range + lowest))$"
+        return "\(Int(fromRatio * range))$ - \(Int(toRatio * range))$"
     }
     
-    func filterBetween() {
-        filtered = topProducts.filter {
-            let fromDiff = range * fromRatio
-            let toDiff = range * toRatio
-            let diff = $0.price - lowest
-            
-            return
-                diff > fromDiff && diff < toDiff
+    func convertStrategyToNumber() -> Int {
+        switch sortByStrategy {
+        case .mostPopular:
+            return 1
+        case .price:
+            return 2
+        case .alphabet:
+            return 0
         }
     }
     
-    // TODO: Delete this!
-    func loadProducts() {
-        topProducts = (0..<6).map {
-            Product(
-            name: "Quần lót nam đầy sức nam tính",
-            description: "",
-            imageLink: "https://res.cloudinary.com/dk8hbcln1/image/upload/v1672655936/meo4_bke2pl.jpg",
-            price: CGFloat($0) * 20,
-            starCount: 100)
+    func loadProducts(refresh: Bool) {
+        if refresh {
+            productsOfCategory.removeAll()
+            pageCount = 0
+            containsMore = true
         }
         
-        filtered.reserveCapacity(topProducts.count)
-        let lowest = topProducts.min(by: { $0.price < $1.price })!.price
-        
-        let highest = topProducts.max(by: { $0.price < $1.price })!.price
-        
-        topProducts.forEach { product in
-            filtered.append(product)
-        }
-        
-        self.lowest = lowest - 1
-        range = highest - lowest + 2
+        ProductAPICaller.instance.getProductsByCategory(
+            category: categoryName,
+            page: pageCount,
+            sortCondition: convertStrategyToNumber(),
+            from: Int(range * fromRatio),
+            to: Int(range * toRatio),
+            onComplete: { result in
+                do {
+                    let newProductList = try result.get().map( {Product(entity: $0)} )
+                    productsOfCategory.append(contentsOf: newProductList)
+                    
+                    let lowest = productsOfCategory.min(by: { $0.price < $1.price })?.price ?? 0
+                    
+                    range = 300 - lowest + 2
+                    
+                    if newProductList.count == 0 {
+                        containsMore = false
+                    }
+                    else {
+                        pageCount += 1
+                    }
+                    
+                    isLoadingImages = false
+                } catch let err {
+                    print(err.localizedDescription)
+                    // TODO: Shows warning and quit here....
+                }
+            })
     }
 }
 

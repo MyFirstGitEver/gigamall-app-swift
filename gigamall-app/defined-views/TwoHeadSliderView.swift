@@ -18,6 +18,7 @@ struct TwoHeadSliderView: View {
     @State private var secondValueOnDrag: CGFloat = 0.0
     
     let onChangingValue : () -> ()
+    let onEndDragging : () -> ()
     let valueConverter : (CGFloat) -> (CGFloat)
     
     var body: some View {
@@ -54,6 +55,7 @@ struct TwoHeadSliderView: View {
                         }
                         .onEnded { _ in
                             showsFirst = false
+                            onEndDragging()
                         })
                 
                 Text("\(Int(firstValueOnDrag))")
@@ -84,6 +86,7 @@ struct TwoHeadSliderView: View {
                         }
                         .onEnded { _ in
                             showsSecond = false
+                            onEndDragging()
                         })
             }
         }.frame(maxHeight: 100)
@@ -97,6 +100,8 @@ struct TwoHeadView_Previews: PreviewProvider {
             secondValue: .constant(0.7),
             onChangingValue: {
                 
+            },
+            onEndDragging:  {
             },
             valueConverter: { $0 })
     }

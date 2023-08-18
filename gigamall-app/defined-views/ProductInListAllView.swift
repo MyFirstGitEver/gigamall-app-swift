@@ -11,21 +11,26 @@ struct ProductInListAllView: View {
     let product : Product
     
     var body: some View {
-        VStack {
-            AsyncImage(url: URL(string: product.imageLink)) { image in
-                       image
-                           .resizable()
-                           .frame(width: 150, height: 150)
-                           
-                   } placeholder: {
-                       Color.gray
-                   }
-            Text("\(product.starCount) 🌟")
-                .font(.system(size: 30))
-                .bold()
-            Text("\(product.name) **(\(product.price)$**)")
-                .font(.system(size: 20))
-                .multilineTextAlignment(.center)
+        NavigationLink {
+            ProductMainView(product: product)
+        } label: {
+            VStack {
+                AsyncImage(url: URL(string: product.imageLink)) { image in
+                           image
+                               .resizable()
+                               .frame(width: 150, height: 150)
+                               
+                       } placeholder: {
+                           Color.gray
+                       }
+                Text("\(product.starCount) 🌟")
+                    .font(.system(size: 30))
+                    .bold()
+                Text("\(product.name) **(\(product.price)$**)")
+                    .font(.system(size: 20))
+                    .multilineTextAlignment(.center)
+            }
+            .foregroundColor(.black)
         }
     }
 }

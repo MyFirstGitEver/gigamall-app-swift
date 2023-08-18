@@ -7,6 +7,6 @@
 
 import Foundation
 
-class LoginAndPort {
+class DomainAndPort {
     static var content = "http://43.207.113.186:8080"
 }

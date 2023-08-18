@@ -34,6 +34,17 @@ struct Product : Identifiable {
         self.starCount = starCount
     }
     
+    init(id: Int){
+        self.id = UUID()
+        self.productId = -1
+        self.name = ""
+        self.description = ""
+        self.imageLink = ""
+        self.price = 0
+        self.starCount = 0
+        self.sold = 0
+    }
+    
     init(entity : ProductEntity) {
         self.id = UUID()
         

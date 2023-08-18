@@ -12,9 +12,15 @@ struct RecommendedProductView: View {
     
     var body: some View {
         VStack {
-            Image("ad1")
-                .resizable()
-                .frame(width: 80, height: 80)
+            AsyncImage(url: URL(string: product.imageLink)) { image in
+                       image
+                           .resizable()
+                           .scaledToFit()
+                           
+                   } placeholder: {
+                       Color.gray
+                   }
+            
             Text(product.name)
                 .font(.system(size: 23))
                 .multilineTextAlignment(.center)

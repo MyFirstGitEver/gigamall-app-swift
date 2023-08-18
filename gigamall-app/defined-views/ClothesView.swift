@@ -17,7 +17,14 @@ struct ClothesView: View {
                 .font(.system(size: 20))
                 .padding(10)
             
-            Image("ad2")
+            AsyncImage(url: URL(string: product.imageLink)) { image in
+                       image
+                           .resizable()
+                           .scaledToFit()
+                           
+                   } placeholder: {
+                       Color.gray
+                   }
             
             Text(product.description)
                 .foregroundColor(.gray)

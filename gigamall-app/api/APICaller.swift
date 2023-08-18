@@ -12,7 +12,7 @@ class APICaller {
         urlPath : String,
         methodName: String,
         onComplete: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        if let url = URL(string: urlPath) {
+            if let url = URL(string: urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) {
             var request = URLRequest(url: url)
             request.httpMethod = methodName
             let session = URLSession.shared

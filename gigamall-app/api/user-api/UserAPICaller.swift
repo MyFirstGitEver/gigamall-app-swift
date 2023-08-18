@@ -20,7 +20,7 @@ class UserAPICaller {
         userName : String,
         password : String,
         onComplete : @escaping (Result<UserEntity, Error>) -> ()) {
-        let urlPath = "\(LoginAndPort.content)/api/user/login/\(password)/\(userName)"
+        let urlPath = "\(DomainAndPort.content)/api/user/login/\(password)/\(userName)"
             
         APICaller.callWithResult(
             urlPath: urlPath,
