@@ -25,6 +25,9 @@
 		8289C9A72A8B6D3600355827 /* ProductMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A62A8B6D3600355827 /* ProductMainView.swift */; };
 		8289C9A92A8B741500355827 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9A82A8B741500355827 /* CommentView.swift */; };
 		8289C9AB2A8B742E00355827 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289C9AA2A8B742E00355827 /* Comment.swift */; };
+		82B1A88E2A8F2F1E0096BB7C /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1A88D2A8F2F1E0096BB7C /* CommentEntity.swift */; };
+		82B1A8902A8F33E90096BB7C /* CommentAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1A88F2A8F33E90096BB7C /* CommentAPICaller.swift */; };
+		82B1A8922A8F3CE80096BB7C /* CommentsAndHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1A8912A8F3CE80096BB7C /* CommentsAndHeader.swift */; };
 		82F8F54C2A8A0F1600F405B5 /* gigamall_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F54B2A8A0F1600F405B5 /* gigamall_appApp.swift */; };
 		82F8F54E2A8A0F1600F405B5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F8F54D2A8A0F1600F405B5 /* MainView.swift */; };
 		82F8F5502A8A0F1800F405B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F8F54F2A8A0F1800F405B5 /* Assets.xcassets */; };
@@ -77,6 +80,9 @@
 		8289C9A62A8B6D3600355827 /* ProductMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMainView.swift; sourceTree = "<group>"; };
 		8289C9A82A8B741500355827 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		8289C9AA2A8B742E00355827 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		82B1A88D2A8F2F1E0096BB7C /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		82B1A88F2A8F33E90096BB7C /* CommentAPICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentAPICaller.swift; sourceTree = "<group>"; };
+		82B1A8912A8F3CE80096BB7C /* CommentsAndHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsAndHeader.swift; sourceTree = "<group>"; };
 		82F8F5482A8A0F1600F405B5 /* gigamall-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gigamall-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F8F54B2A8A0F1600F405B5 /* gigamall_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gigamall_appApp.swift; sourceTree = "<group>"; };
 		82F8F54D2A8A0F1600F405B5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		8242CBD02A8DBF9A007B2731 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				82B1A88C2A8F2F090096BB7C /* comments-api */,
 				8242CBDA2A8DE6BB007B2731 /* product-api */,
 				8242CBD72A8DC6A0007B2731 /* user-api */,
 				8242CBD32A8DC0AC007B2731 /* DomainAndPort.swift */,
@@ -157,6 +164,16 @@
 				8242CBDD2A8DE725007B2731 /* ProductEntity.swift */,
 			);
 			path = "product-api";
+			sourceTree = "<group>";
+		};
+		82B1A88C2A8F2F090096BB7C /* comments-api */ = {
+			isa = PBXGroup;
+			children = (
+				82B1A88D2A8F2F1E0096BB7C /* CommentEntity.swift */,
+				82B1A88F2A8F33E90096BB7C /* CommentAPICaller.swift */,
+				82B1A8912A8F3CE80096BB7C /* CommentsAndHeader.swift */,
+			);
+			path = "comments-api";
 			sourceTree = "<group>";
 		};
 		82F8F53F2A8A0F1600F405B5 = {
@@ -390,9 +407,11 @@
 			files = (
 				8242CBD22A8DBFC3007B2731 /* UserAPICaller.swift in Sources */,
 				8289C9A52A8B507200355827 /* ConfirmationView.swift in Sources */,
+				82B1A88E2A8F2F1E0096BB7C /* CommentEntity.swift in Sources */,
 				8222D46C2A8BA31C00319F21 /* DataConverter.swift in Sources */,
 				8289C9A92A8B741500355827 /* CommentView.swift in Sources */,
 				8242CBC02A8CA1D6007B2731 /* TwoHeadSliderView.swift in Sources */,
+				82B1A8922A8F3CE80096BB7C /* CommentsAndHeader.swift in Sources */,
 				82F8F5802A8A20AA00F405B5 /* ClothesView.swift in Sources */,
 				8242CBD42A8DC0AC007B2731 /* DomainAndPort.swift in Sources */,
 				8242CBD62A8DC542007B2731 /* APICaller.swift in Sources */,
@@ -402,6 +421,7 @@
 				82F8F54E2A8A0F1600F405B5 /* MainView.swift in Sources */,
 				82F8F5842A8A67C000F405B5 /* ByCategory.swift in Sources */,
 				8222D46D2A8BA31C00319F21 /* MyDateFormatter.swift in Sources */,
+				82B1A8902A8F33E90096BB7C /* CommentAPICaller.swift in Sources */,
 				8289C9A72A8B6D3600355827 /* ProductMainView.swift in Sources */,
 				8222D4712A8BB5D500319F21 /* ProductInListAllView.swift in Sources */,
 				82F8F5892A8A780D00F405B5 /* LoginView.swift in Sources */,

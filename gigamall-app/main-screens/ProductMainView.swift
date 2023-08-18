@@ -11,6 +11,9 @@ struct ProductMainView: View {
     let product : Product
     @State private var commentsNum : Int = 0
     @State private var comments : [Comment] = []
+    @State private var commentPageCount : Int = 0
+    
+    @State private var containsMore: Bool = true
     
     @Environment(\.dismiss) var dismiss
     
@@ -27,14 +30,8 @@ struct ProductMainView: View {
                     Divider()
                 }
                 
-                HStack {
-                    Button(action: {
-                    }) {
-                        Text("Xem thêm \(comments.count) bình luận")
-                            .padding([.leading], 10)
-                            .underline()
-                    }
-                    Spacer()
+                if containsMore {
+                    showMoreCommentsButon
                 }
             }.onAppear {
                 loadComments()
@@ -42,6 +39,20 @@ struct ProductMainView: View {
             
             Spacer()
         }.navigationBarBackButtonHidden()
+    }
+    
+    var showMoreCommentsButon: some View {
+        HStack {
+            Button(action: {
+                commentPageCount += 1
+                loadComments()
+            }) {
+                Text("Xem thêm \(commentsNum) bình luận")
+                    .padding([.leading], 10)
+                    .underline()
+            }
+            Spacer()
+        }
     }
     
     var middleDisplay : some View {
@@ -107,11 +118,32 @@ struct ProductMainView: View {
         .background(topDisplayColor)
     }
     
-    //TODO: Delete this!
     func loadComments() {
-        comments = (0..<10).map { _ in
-            return Comment(attatchedUrl: "https://res.cloudinary.com/dk8hbcln1/image/upload/v1672655936/meo4_bke2pl.jpg")
-        }
+        CommentAPICaller.instance.getCommentsOfProduct(
+            productId: product.productId,
+            page: commentPageCount,
+            onComplete: { result in
+                do {
+                    let commentAndHeader = try result.get()
+                    
+                    let newComments = commentAndHeader.comments
+                        .map( { Comment(entity: $0) })
+                    
+                    if(commentAndHeader.commentNums != 0) {
+                        commentsNum = commentAndHeader.commentNums
+                    }
+                    
+                    comments.append(contentsOf: newComments)
+                    
+                    if (newComments.count == 0) {
+                        containsMore = false
+                    }
+                }
+                catch let err {
+                    print(err.localizedDescription)
+                    //TODO: Shows warning here!
+                }
+            })
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 class MyDateFormatter {
     static fileprivate var aDay = 24 * 3600.0
     static fileprivate var aWeek = aDay * 7
-    static fileprivate var aMonth = aWeek * 30
+    static fileprivate var aMonth = aWeek * 4
     
     static func diffFromNow(date : Date) -> String {
         let nowInSeconds = Date.now.timeIntervalSince1970

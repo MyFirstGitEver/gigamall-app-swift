@@ -22,7 +22,7 @@ struct CategoryMainView: View {
     let allChoices : [By] = [.alphabet, .mostPopular, .price]
     let categoryName : String
     
-    @State private var range : CGFloat = 300
+    @State private var range : CGFloat = 3000
     
     @State private var fromRatio : CGFloat = 0.0
     @State private var toRatio : CGFloat = 1.0
@@ -34,6 +34,7 @@ struct CategoryMainView: View {
     @State private var productsOfCategory : [Product] = [
     ]
     
+    @State private var showsWarning : Bool = false
     @State private var isLoadingImages : Bool = false
     @State private var containsMore : Bool = true
     @State private var pageCount : Int = 0
@@ -56,6 +57,27 @@ struct CategoryMainView: View {
                         loadProducts(refresh: true)
                     }
                 }
+                
+                VStack {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.yellow)
+                    
+                    Text("Không thể kết nối với máy chủ! Vui lòng kiểm tra đường truyền")
+                        .multilineTextAlignment(.center)
+                        .padding([.bottom], 10)
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Text("OK")
+                    }
+                }
+                .padding(30)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .shadow(radius: 20)
+                .offset(x: showsWarning ? 0 : -1000)
                 
                 filterDialog
                     .padding(30)
@@ -217,10 +239,6 @@ struct CategoryMainView: View {
                     let newProductList = try result.get().map( {Product(entity: $0)} )
                     productsOfCategory.append(contentsOf: newProductList)
                     
-                    let lowest = productsOfCategory.min(by: { $0.price < $1.price })?.price ?? 0
-                    
-                    range = 300 - lowest + 2
-                    
                     if newProductList.count == 0 {
                         containsMore = false
                     }
@@ -229,9 +247,12 @@ struct CategoryMainView: View {
                     }
                     
                     isLoadingImages = false
+                    
                 } catch let err {
                     print(err.localizedDescription)
-                    // TODO: Shows warning and quit here....
+                    withAnimation(.spring()) {
+                        showsWarning = true
+                    }
                 }
             })
     }

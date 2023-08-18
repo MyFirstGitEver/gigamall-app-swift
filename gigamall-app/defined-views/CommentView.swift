@@ -15,20 +15,42 @@ struct CommentView: View {
     
     let comment : Comment
     
+    @State private var subCommentsCount : Int = 0
+    @State private var subComments : [Comment] = []
+    
+    @State private var containsMore: Bool = true
+    
     var body: some View {
         VStack {
             mainPartOfComment
             
-            HStack {
-                Button(action: {
-                    
-                }) {
-                    Text("Xêm thêm 3 phản hồi")
+            if subComments.count != 0 {
+                LazyVStack {
+                    ForEach(subComments) { comment in
+                        CommentView(comment: comment)
+                    }
                 }
-                .padding([.leading], 10)
+            }
+            
+            HStack {
+                if containsMore && comment.childCount != 0 {
+                    Button(action: {
+                        CommentAPICaller.instance.getRepliesOfComment(
+                            replyId: comment.commentId,
+                            page: subCommentsCount,
+                            onComplete: { result in
+                                withAnimation(.spring()) {
+                                    processSubCommentsResult(result: result)
+                                }
+                            })
+                    }) {
+                        Text("Xêm thêm \(comment.childCount) phản hồi")
+                    }
+                    .padding([.leading], 10)
+                }
                 Spacer()
             }
-        }
+        }.padding([.leading], CGFloat(comment.level) * 20)
     }
     
     var mainPartOfComment : some View {
@@ -64,10 +86,30 @@ struct CommentView: View {
             }
         }
     }
+    
+    func processSubCommentsResult(result: Result<[CommentEntity], Error>) {
+        do {
+            let newSubComments = try result.get()
+            
+            if newSubComments.count == 0 {
+                containsMore = false
+                return
+            }
+            
+            self.subComments.append(
+                contentsOf: newSubComments.map( { Comment(entity: $0) } ))
+            subCommentsCount += 1
+        }
+        catch let err {
+            print(err.localizedDescription)
+        }
+    }
 }
 
 struct CommentView_Previews: PreviewProvider {
     static var previews: some View {
-        CommentView(comment: Comment(attatchedUrl: "https://res.cloudinary.com/dk8hbcln1/image/upload/v1672655936/meo4_bke2pl.jpg"))
+        CommentView(comment:Comment(
+                            attatchedUrl: "https://res.cloudinary.com/dk8hbcln1/image/upload/v1672655936/meo4_bke2pl.jpg",
+                            level: 0))
     }
 }
